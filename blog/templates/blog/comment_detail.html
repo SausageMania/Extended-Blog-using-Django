@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class= "comment">
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'comment_edit' pk=post.pk cpk=comment.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            {% if user.is_superuser %}
+                <a class="btn btn-default" href="{% url 'comment_remove' pk=post.pk cpk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+            {% endif %}
+        {% endif %}
+
+        {% if comment.published_date %}
+            <div class="date">
+                <strong>{{comment.published_date}}</strong>
+            </div>
+        {% endif %}
+
+        <h1>{{comment.title}}</h1>
+        <p>{{comment.text|linebreaksbr}}</p>
+        <p><strong> 작성자 : {{ comment.author }}</strong></p>
+    </div>
+    <hr>
+{% endblock %}

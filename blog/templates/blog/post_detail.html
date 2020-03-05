@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class= "post">
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            {% if user.is_superuser %}
+                <a class="btn btn-default" href="{% url 'post_delete' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+            {% endif %}
+        {% endif %}
+
+        {% if post.published_date %}
+            <div class="date">
+                <strong>{{post.published_date}}</strong>
+            </div>
+        {% else %}
+            <a class="btn btn-default" href = "{% url 'post_publish' pk=post.pk %}">Publish</a>
+        {% endif %}
+
+        <h1>{{post.title}}</h1>
+        <p>{{post.text|linebreaksbr}}</p>
+        <p><strong> 작성자 : {{ post.author }}</strong></p>
+    </div>
+    <hr>
+        {% for comment in post.comments.all %}
+            {% if user.is_authenticated or comment.approved_comment %}
+            <div class = "comment">
+                <div class = "date">
+                    {{ comment.created_date }}
+                    {% if not comment.approved_comment %}
+                        <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                    {% endif %}
+                </div>
+                <a href = "{% url 'comment_detail' pk=post.pk cpk=comment.pk %}"><p>{{ comment.text|linebreaksbr }}</p></a>
+                <strong>작성자 : {{ comment.author }}</strong>
+
+            </div>
+            {% endif %}
+        {% empty %}
+            <p>No comments here yet :(</p>
+        {% endfor %}
+    <a class = "btn btn-default" href = "{%  url 'add_comment' pk=post.pk %}">Add Comment</a>
+{% endblock %}
