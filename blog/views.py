@@ -109,6 +109,7 @@ def comment_edit(request,pk,cpk):
         if form.is_valid():
             comment = form.save(commit=False)
             comment.post = post
+            comment.author = 'admin'
             comment.save()
             return redirect('comment_detail', pk=post.pk, cpk=comment.pk)
     else:

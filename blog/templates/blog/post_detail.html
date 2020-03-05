@@ -23,16 +23,16 @@
     </div>
     <hr>
         {% for comment in post.comments.all %}
-            {% if user.is_authenticated or comment.approved_comment %}
+            {% if user.is_superuser or comment.approved_comment %}
             <div class = "comment">
                 <div class = "date">
-                    {{ comment.created_date }}
+                    <strong>{{ comment.created_date }}</strong>
                     {% if not comment.approved_comment %}
                         <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
                     {% endif %}
                 </div>
-                <a href = "{% url 'comment_detail' pk=post.pk cpk=comment.pk %}"><p>{{ comment.text|linebreaksbr }}</p></a>
-                <strong>작성자 : {{ comment.author }}</strong>
+                <a href = "{% url 'comment_detail' pk=post.pk cpk=comment.pk %}"><p><strong>{{ comment.text|linebreaksbr }}</strong></p></a>
+                작성자 : {{ comment.author }}
 
             </div>
             {% endif %}

@@ -3,7 +3,9 @@
 {% block content %}
 <div class= "comment">
         {% if user.is_authenticated %}
+            {% if user.username == comment.author %}
             <a class="btn btn-default" href="{% url 'comment_edit' pk=post.pk cpk=comment.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            {% endif %}
             {% if user.is_superuser %}
                 <a class="btn btn-default" href="{% url 'comment_remove' pk=post.pk cpk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
             {% endif %}
