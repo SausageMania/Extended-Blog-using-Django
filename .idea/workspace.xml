@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="66db8d52-231e-4f81-9a4b-fe40c25d75bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/add_comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/add_comment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/registration/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_draft_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_draft_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +76,7 @@
       <workItem from="1583303584555" duration="8937000" />
       <workItem from="1583370030692" duration="133000" />
       <workItem from="1583383989393" duration="12956000" />
-      <workItem from="1583457764684" duration="1100000" />
+      <workItem from="1583457764684" duration="2671000" />
     </task>
     <servers />
   </component>
