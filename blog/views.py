@@ -118,7 +118,7 @@ def comment_edit(request, pk, cpk):
         return redirect('post_detail', pk=post.pk)
     else:
         if request.method == "POST":
-            form = CommentForm(request.POST, instance=comment)
+            form = CommentForm(request.POST, instance=post)
             if form.is_valid():
                 comment = form.save(commit=False)
                 comment.post = post
