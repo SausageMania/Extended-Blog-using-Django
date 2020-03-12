@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.views import generic
+
 from .models import Post, Comment
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
@@ -6,7 +7,6 @@ from django.shortcuts import redirect
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-from django.db import models
 
 
 def post_list(request):
@@ -17,6 +17,17 @@ def post_list(request):
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
+
+
+'''
+@login_required
+class PostCreateView(generic.CreateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'blog/post_edit.html'
+    success_url = '/'
+
+'''
 
 
 @login_required
@@ -31,6 +42,17 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
+
+
+'''
+@login_required
+class PostEditView(generic.UpdateView):
+    model = Post
+    template_name = 'blog/post_edit.html'
+    form_class = PostForm
+    context_object_name = 'form'
+    success_url = '/'
+'''
 
 
 @login_required

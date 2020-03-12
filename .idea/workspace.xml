@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="66db8d52-231e-4f81-9a4b-fe40c25d75bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
     </list>
@@ -83,7 +83,9 @@
       <workItem from="1583823826200" duration="2221000" />
       <workItem from="1583915985344" duration="1063000" />
       <workItem from="1583972266015" duration="31000" />
-      <workItem from="1583976624038" duration="1547000" />
+      <workItem from="1583976624038" duration="3677000" />
+      <workItem from="1583993277479" duration="150000" />
+      <workItem from="1583994433691" duration="7235000" />
     </task>
     <servers />
   </component>
@@ -95,9 +97,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1583458926013" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1583972294974">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1583993426367">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1583972294974" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1583993426367" />
   </component>
 </project>
