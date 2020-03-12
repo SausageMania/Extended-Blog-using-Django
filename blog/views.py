@@ -112,13 +112,13 @@ def comment_remove(request, pk, cpk):
 
 @login_required
 def comment_edit(request, pk, cpk):
-    post = get_object_or_404(Post, pk=pk)
     comment = get_object_or_404(Comment, pk=cpk)
+    post = get_object_or_404(Post, pk=comment.post.pk)
     if request.user.username != comment.author:
         return redirect('post_detail', pk=post.pk)
     else:
         if request.method == "POST":
-            form = CommentForm(request.POST, instance=post)
+            form = CommentForm(request.POST, instance=comment)
             if form.is_valid():
                 comment = form.save(commit=False)
                 comment.post = post
@@ -126,5 +126,5 @@ def comment_edit(request, pk, cpk):
                 comment.save()
                 return redirect('post_detail', pk=post.pk)
         else:
-            form = CommentForm()
+            form = CommentForm(instance=comment)
     return render(request, 'blog/add_comment.html', {'form': form})

@@ -36,7 +36,7 @@
                 </div>
                 <a href="{% url 'comment_edit' pk=post.pk cpk=comment.pk %}"><p><strong>{{ comment.text|linebreaksbr }}</strong></p></a>
                 {% if user.username == comment.author %}
-                    <a class="btn btn-default" href="{% url 'comment_edit' pk=post.pk cpk=comment.pk %}"><span
+                    <a class="btn btn-default" href="{% url 'comment_edit' pk=post.pk cpk=comment.pk  %}"><span
                             class="glyphicon glyphicon-pencil"></span></a>
                 {% endif %}
                 {% if user.is_superuser %}
